@@ -159,7 +159,7 @@ justify-items: center;
 .contact-text{
     width: 50%;
     height: 100%;
-    background-color: #33A1E0;
+    background-color: #A7C1A8;
     padding: 1%;
     font-size: large;
     text-align: center;
@@ -186,7 +186,7 @@ table {
 
 table th,
 table td {
-  border: 2px solid #FFF9AF; /* same color as .border */
+  border: 2px solid #EEEFE0; /* same color as .border */
   padding: 10px;
   text-align: center;
   color: black;
@@ -194,7 +194,7 @@ table td {
 }
 
 table th {
-  background-color: #33A1E0;
+  background-color: #A7C1A8;
   color: black;
 }
 /* make form inputs consistent with the table */
@@ -216,7 +216,7 @@ table th {
   width: 100%; /* fill the label width */
   text-align: center;
   box-sizing: border-box;
-  border: 2px solid #FFF9AF;
+  border: 2px solid #EEEFE0;
   border-radius: 4px;
 }
 
@@ -227,21 +227,21 @@ table th {
 
 #contactForm button {
   padding: 5px 15px;
-  background-color: #33A1E0;
-  border: 2px solid #FFF9AF;
+  background-color: #A7C1A8;
+  border: 2px solid #EEEFE0;
   border-radius: 6px;
   cursor: pointer;
 }
 
 #contactForm button:hover {
-  background-color: #FFF9AF;
+  background-color: #EEEFE0;
 }
 
 /* testimonial section */
 .testimonial-text{
     width: 50%;
     height: 100%;
-    background-color: #33A1E0;
+    background-color: #A7C1A8;
     padding: 1.5%;
     margin-left: 1%;
     font-size: large;
