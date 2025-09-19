@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Tom's Tutoring</title>
+    <head>
+  <title>Tom's Tutoring | Cambridge Graduate Tutor in Nottingham</title>
+
+</head>
+
+</head>
+<body>
+     <div class="top-title"><h1>Tom's Tutoring</h1></div>
+
+<div class="navBar">
+    <ul>
+  <li><a href="./index.html">Home</a></li>
+  <li><a href="./testimonials.html">Testimonials</a></li>
+  <li><a class="active" href="./contact.html">Contact</a></li>
+  <li><a href="./about.html">About Me</a></li>
+</ul>
+</div>
+
+<div class="contact-cont"> 
+   
+    <div class="welcome">
+        <div class="contact-img-container">
+            <img class="contimg" src="./imgs/lrg.png" alt="">
+        </div>
+
+        <div class="contact-text">
+            <div class="border">
+             <h2>Contact Me</h2>
+            <form id="contactForm">
+                <label>Name: <input type="text" id="name"></label><br>
+                <label>Email: <input type="email" id="email"></label><br>
+
+                <p>When are you available?</p>
+                <table>
+                <thead>
+                    <tr>
+                    <th></th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                    <th>Saturday</th>
+                    <th>Sunday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>Morning</td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="checkbox" name="availability" value="Wednesday Morning"></td>
+                    <td></td>
+                    <td><input type="checkbox" name="availability" value="Friday Morning"></td>
+                    <td><input type="checkbox" name="availability" value="Saturday Morning"></td>
+                    <td><input type="checkbox" name="availability" value="Sunday Morning"></td>
+                    </tr>
+                    <tr>
+                    <td>Afternoon</td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="checkbox" name="availability" value="Wednesday Afternoon"></td>
+                    <td></td>
+                    <td><input type="checkbox" name="availability" value="Friday Afternoon"></td>
+                    <td><input type="checkbox" name="availability" value="Saturday Afternoon"></td>
+                    <td><input type="checkbox" name="availability" value="Sunday Afternoon"></td>
+                    </tr>
+                    <tr>
+                    <td>Evening</td>
+                    <td><input type="checkbox" name="availability" value="Wednesday Evening"></td>
+                    <td><input type="checkbox" name="availability" value="Friday Evening"></td>
+                    <td><input type="checkbox" name="availability" value="Saturday Evening"></td>
+                    <td><input type="checkbox" name="availability" value="Sunday Evening"></td>
+                    <td><input type="checkbox" name="availability" value="Sunday Evening"></td>
+                    <td><input type="checkbox" name="availability" value="Sunday Evening"></td>
+                    <td><input type="checkbox" name="availability" value="Sunday Evening"></td>
+                    </tr>
+                </tbody>
+                </table>
+
+
+                <label>Message: <textarea id="message"></textarea></label><br>
+
+                <button type="submit">Send</button>
+            </form>
+            </div>
+        </div>
+        
+    </div>
+</div>
+</body>
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // Grab form values
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    // Collect checked availability
+    const availability = Array.from(document.querySelectorAll('input[name="availability"]:checked'))
+                              .map(cb => cb.value)
+                              .join(", ");
+
+    // Build email subject & body
+    const subject = `Tutoring Enquiry from ${name}`;
+    const body = `
+Name: ${name}
+Email: ${email}
+
+Availability: ${availability || "Not specified"}
+
+Message:
+${message}
+    `;
+
+    // Replace with your brother's email
+    const mailtoLink = `mailto:yourbrother@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    // Open mailto in a new tab/window
+    window.open(mailtoLink, '_blank');
+});
+</script>
+</html>

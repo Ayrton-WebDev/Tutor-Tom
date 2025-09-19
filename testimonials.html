@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Tom's Tutoring</title>
+</head>
+<body>
+     <div class="top-title"><h1>Tom's Tutoring</h1></div>
+
+<div class="navBar">
+    <ul>
+  <li><a  href="./index.html">Home</a></li>
+  <li><a class="active" href="./testimonials.html">Testimonials</a></li>
+  <li><a href="./contact.html">Contact</a></li>
+  <li><a href="./about.html">About Me</a></li>
+</ul>
+</div>
+
+<div class="home-container">
+<div class="main-cont"> 
+   
+    <div class="welcome">
+        <div class="test-img-container">
+            <img class="testimonialImg" src="./imgs/lrg.png" alt="">
+        </div>
+
+        <div class="testimonial-text" id="testimonial-container">
+            
+
+         
+        </div>
+        
+    </div>
+</div>
+
+<div class="blog">
+    <div class=" blog-title ">
+        <div class="border">
+            <h2>FAQs</h2>
+        </div>
+    </div>
+    <div class="blog-section">
+        <div class="blog-card">
+          <h4>What subjects do you teach?</h4>
+          <p class="hidden">I teach A-Level Politics and Geography</p>
+      </div>
+        <div class="blog-card">
+          <h4>How long are the lessons?</h4>
+          <p class="hidden">My lessons are an hour long.</p>
+      </div>
+    </div>
+    
+
+</div>
+</div>
+    
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Select all blog cards
+  const blogCards = document.querySelectorAll(".blog-card");
+
+  blogCards.forEach(card => {
+    const header = card.querySelector("h4");
+    const hiddenText = card.querySelector("p");
+
+    if (header && hiddenText) {
+      card.style.cursor = "pointer"; // show it's clickable
+      header.addEventListener("click", () => {
+        hiddenText.classList.toggle("hidden");
+      });
+    }
+  });
+});
+
+
+fetch('./testimonials.json')
+  .then(response => response.json())
+  .then(data => {
+    const container = document.getElementById('testimonial-container');
+
+    // Loop through testimonials
+    data.testimonials.forEach(item => {
+      const card = document.createElement('div');
+      card.classList.add('border');
+
+      card.innerHTML = `
+        <h3>${item.name}</h3>
+        <p>${item.testimonial}</p>
+      `;
+
+      // Insert before the "My Teaching Approach" card
+      container.insertBefore(card, container.lastElementChild);
+    });
+  })
+  .catch(error => console.error('Error loading testimonials:', error));
+</script>
+
+</body>
+</html>

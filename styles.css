@@ -1,0 +1,262 @@
+body {
+  margin: 0;
+  padding: 15px;
+  background-color: #819A91;
+  max-height: 100vh;
+}
+.top-title{
+    text-align: center;
+    font-size: larger;
+    color: #EEEFE0;
+}
+
+.navBar { 
+    position: sticky;
+    top: 0px;
+    margin-bottom: 1%;
+ }
+
+ul {
+  list-style-type: none;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+ background-color: #A7C1A8;
+}
+
+ul li {
+  float: left;
+  border-right:2px solid #A7C1A8;
+  font-size: large;
+}
+
+ul li:last-child {
+  border-right: none;
+}
+
+ul li a {
+  display: block;
+  color: black;
+  background-color: #A7C1A8;
+  text-align: center;
+  padding: 20px 20px;
+  text-decoration: none;
+}
+
+ul li a:hover:not(.active) {
+  background-color: #EEEFE0;
+}
+
+ul li a.active {
+  background-color: #EEEFE0;
+}
+
+.home-container {
+display: grid;
+grid-template-columns: 3fr 1fr;
+grid-template-rows: 1fr;
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+/* background-color: #1C6EA4; */
+}
+
+.main-cont { 
+    grid-area: 1 / 1 / 2 / 2;
+    justify-items: center;
+}
+
+.welcome{
+    display: flex;
+    /* background-color: #33A1E0; */
+    background-color: #A7C1A8;
+    padding: 1%;
+}
+.border{
+      border:3px solid #EEEFE0;
+      padding: 1%;
+      width: 97%;
+      text-align: center;
+      margin-bottom: 2%;
+}
+.img-container{
+    width: 50%;
+}
+
+.homePic{
+    width: 100%;
+}
+.welcome-text{
+    width: 50%;
+    height: 100%;
+    background-color: #A7C1A8;
+    margin-left: 1%;
+    padding: 2%;
+    font-size: larger;
+    text-align: center;
+}
+
+.blog { 
+grid-area: 1 / 2 / 2 / 3;
+margin-left: 15px;
+padding: 2%;
+max-height: 73.9vh;
+background-color: #A7C1A8;
+justify-items: center;
+}
+.blog-title{
+    background-color: #A7C1A8;
+    width: 90%;
+    margin: 1%;
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+    font-size: larger;
+}
+.blog-section{
+    background-color: #A7C1A8;
+    width: 90%;
+    margin: 1%;
+    justify-content: center;
+    padding: 2%;
+    font-size: larger;
+}
+.blog-card{
+    border:3px solid #EEEFE0;
+    margin-bottom: 2%;
+    text-align: center;
+}
+
+/* about me section */
+.about-text{
+    width: 50%;
+    height: 100%;
+    background-color: #A7C1A8;
+    padding: 1.5%;
+    margin-left: 1%;
+    font-size: large;
+    text-align: center;
+}
+.aboutImg{
+    width: 100%;
+    height: 98%;
+}
+.about-text h2, .about-text h3{
+    margin: 5px;
+}
+.section { 
+grid-area: 1 / 2 / 2 / 3;
+margin-left: 15px;
+padding: 2%;
+max-height: 77vh;
+background-color: #819A91;
+justify-items: center;
+}
+
+/* contact section */
+.contact-text{
+    width: 50%;
+    height: 100%;
+    background-color: #33A1E0;
+    padding: 1%;
+    font-size: large;
+    text-align: center;
+}
+.contact-cont{
+    width: 100%;
+}
+.contimg{
+    width: 89%;
+    height: 97%;
+}
+.contact-img-container{
+    display: flex;
+    justify-content: center;
+
+    width: 40%;
+}
+
+/* style the contact table */
+table {
+  margin: 1% auto; /* centers the table */
+  border-collapse: collapse; /* makes it clean */
+}
+
+table th,
+table td {
+  border: 2px solid #FFF9AF; /* same color as .border */
+  padding: 10px;
+  text-align: center;
+  color: black;
+  background-color: #fdfdfd20; /* faint background so checkboxes stand out */
+}
+
+table th {
+  background-color: #33A1E0;
+  color: black;
+}
+/* make form inputs consistent with the table */
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#contactForm label {
+  display: block;
+  width: 52%; /* matches the table width */;
+  text-align: center; /* keeps label text on the left */
+}
+
+#contactForm input[type="text"],
+#contactForm input[type="email"],
+#contactForm textarea {
+  width: 100%; /* fill the label width */
+  text-align: center;
+  box-sizing: border-box;
+  border: 2px solid #FFF9AF;
+  border-radius: 4px;
+}
+
+#contactForm textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+#contactForm button {
+  padding: 5px 15px;
+  background-color: #33A1E0;
+  border: 2px solid #FFF9AF;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#contactForm button:hover {
+  background-color: #FFF9AF;
+}
+
+/* testimonial section */
+.testimonial-text{
+    width: 50%;
+    height: 100%;
+    background-color: #33A1E0;
+    padding: 1.5%;
+    margin-left: 1%;
+    font-size: large;
+    text-align: center;
+    max-height: 684px;
+    overflow-y: scroll;
+}
+.test-img-container{
+    width: 50%;
+    max-height: 684px;
+}
+.testimonialImg{
+    width: 100%;
+    height: 98%;
+}
+.hidden {
+  display: none;
+}
